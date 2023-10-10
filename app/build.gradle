@@ -17,22 +17,6 @@ apply plugin: 'io.fabric'
 final def keystorePropertiesFile = rootProject.file("keystore.properties")
 
 android {
-    // If the keystore file exists
-    if (keystorePropertiesFile.exists()) {
-        // Initialize a new Properties() object called keystoreProperties.
-        final def keystoreProperties = new Properties()
-
-        // Load your keystore.properties file into the keystoreProperties object.
-        keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-        signingConfigs {
-            config {
-                keyAlias keystoreProperties['keyAlias']
-                keyPassword keystoreProperties['keyPassword']
-                storeFile file('twrpbuilderkey.jks')
-                storePassword keystoreProperties['storePassword']
-            }
-        }
-    }
     compileSdkVersion 28
     buildToolsVersion "28.0.2"
     defaultConfig {
