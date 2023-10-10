@@ -27,8 +27,7 @@ android {
         versionName "6.2"
     }
     buildTypes {
-        debug {
-            signingConfig signingConfigs.config
+        debug{
             jniDebuggable true
         }
     }
